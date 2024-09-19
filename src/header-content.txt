@@ -1,0 +1,22 @@
+<div class="social-links">
+    <a href="https://twitter.com/alekseygitelson" target="_blank" rel="noopener noreferrer" class="social-button twitter">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+        </svg>
+        <span class="sr-only">X (Twitter)</span>
+    </a>
+    <a href="https://www.linkedin.com/in/alekseygitelson" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        <span class="sr-only">LinkedIn</span>
+    </a>
+</div>
+<nav>
+    <ul>
+        <li><a href="index.html" aria-label="Home">🏠</a></li>
+        <li><a href="book-recommendations.html">Book Recommendations</a></li>
+        <li><a href="my-projects.html">My Projects</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+    </ul>
+</nav>

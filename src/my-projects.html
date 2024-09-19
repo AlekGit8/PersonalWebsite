@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Aleksey Gitelson</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    
+    <div class="glass-container">
+        <main class="content-width">
+            <section class="projects">
+                <h2>My Projects 🛠️</h2>
+                <p class="projects-intro">Here are some of my recent projects:</p>
+                <ul class="projects-list">
+                    <li>This website! This is my first ever coding project, I am using Cursor to generate the code, and I am learning a lot! Prompt engineering seems like it will be a very important skill for most people in the very near future (I am not a programmer by trade, I am actually a pharmacist by training and currently work as a scientist in the pharmaceutical industry).</li>
+                    <li>Project 2</li>
+                    <li>Project 3</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aleksey Gitelson</p>
+    </footer>
+
+    <script>
+        fetch('header-content.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

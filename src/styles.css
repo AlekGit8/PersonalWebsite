@@ -1,0 +1,465 @@
+/* Global Styles */
+:root {
+  --background-color: rgba(220, 240, 220, 0.8); /* Light forest green with transparency */
+  --glass-background: rgba(255, 255, 255, 0.1); /* Transparent white for glass effect */
+  --text-color: #1a3a1a; /* Dark forest green for text */
+  --accent-color: #4a7a4a; /* Darker green for accents */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--background-color);
+  background-image: url('https://source.unsplash.com/random/1920x1080/?forest,nature');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-container {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+header {
+  text-align: right;
+  padding: 20px;
+}
+
+.header-content {
+  display: inline-block;
+  text-align: right;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  text-align: center; /* Keep the heading centered */
+}
+
+h2 + * {
+  text-align: left; /* Align the content immediately following h2 to the left */
+}
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+footer {
+  background-color: var(--glass-background);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  p {
+    width: 90%; /* Wider paragraphs on small screens */
+  }
+}
+
+/* New styles for paragraphs */
+p {
+  text-align: left;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; /* Add some space between paragraphs */
+}
+
+.book-intro {
+    text-align: left;
+    width: 100%; /* Change from 75% to 100% */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.book-list {
+    width: 100%; /* Change from 75% to 100% */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Adjust this value as needed */
+    list-style-position: outside;
+    text-align: left; /* Ensure the list itself is left-aligned */
+}
+
+.book-list > li {
+    margin-bottom: 20px; /* Increase space between list items */
+}
+
+.book-list > li > strong {
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block; /* This helps with spacing */
+    margin-bottom: 5px; /* Space between title and description */
+}
+
+.book-list p {
+    margin: 0; /* Remove default paragraph margins */
+    padding-left: 0; /* Remove any left padding */
+}
+
+.book-content {
+    width: 100%; /* Change from 75% to 100% */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.book-list p a {
+    color: #1DA1F2; /* Twitter blue color */
+    text-decoration: none;
+}
+
+.book-list p a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+.social-button.twitter {
+    background-color: #000000;
+}
+
+.x-logo {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.social-button.linkedin {
+    background-color: #0077B5;
+}
+
+.social-button:hover {
+    opacity: 0.8;
+}
+
+.social-button i {
+    font-size: 16px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    .social-links {
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .social-button {
+        margin: 0 5px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+.left-aligned-list {
+    text-align: left;
+}
+
+main section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Add a new class for general content width */
+.content-width {
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.aligned-list {
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.aligned-list li {
+    margin-bottom: 1em;
+}
+
+.book-recommendations,
+.projects {
+    text-align: left;
+}
+
+.book-intro,
+.projects-intro {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.book-list,
+.projects-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.book-list li,
+.projects-list li {
+    margin-bottom: 20px;
+}
+
+.book-list li strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.projects {
+    text-align: left;
+}
+
+.projects-intro {
+    margin-bottom: 20px;
+    margin-left: 5px; /* Adjusted from 20px to 5px for finer alignment */
+}
+
+.projects-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.projects-list li {
+    margin-bottom: 20px;
+    padding-left: 10px; /* This adds a little space after the bullet */
+}
+
+/* Ensure text wrapping works properly for long list items */
+.projects-list li p {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-me {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(215, 243, 215, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-me:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.contact-me h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.contact-input,
+#contact-message {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-input:focus,
+#contact-message:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#contact-message {
+    height: 100px;
+    resize: vertical;
+}
+
+#send-message {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1db559;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#send-message:hover {
+    background-color: #5b8ce7;
+}
+
+#send-message:active {
+    transform: scale(0.98);
+}
+
+/* Add these new styles */
+.hardware, .software {
+    text-align: left;
+}
+
+.hardware-intro, .software-intro {
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.hardware-list, .software-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.hardware-list li, .software-list li {
+    margin-bottom: 20px;
+}
+
+#char-count {
+    font-size: 0.8em;
+    color: #666;
+    text-align: right;
+    margin-top: 0px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    
+    <div class="glass-container">
+        <main>
+            <section>
+                <h2>Welcome! 👋🏻</h2>
+                <p>Hello! I'm Aleksey. This is my personal website.</p>
+                <p>Feel free to explore and learn more about me.</p>
+            </section>
+            
+            <section class="contact-me">
+                <h2>Contact Me</h2>
+                <input type="text" id="contact-name" placeholder="Your Name" class="contact-input">
+                <input type="email" id="contact-email" placeholder="Your Email" class="contact-input">
+                <textarea id="contact-message" placeholder="Enter your message here" maxlength="2000"></textarea>
+                <div id="char-count">2000 characters remaining</div>
+                <button id="send-message">Send</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aleksey Gitelson</p>
+    </footer>
+
+    <script>
+        fetch('header-content.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactInputs = document.querySelectorAll('.contact-input, #contact-message');
+            
+            contactInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    if (this.value === this.getAttribute('placeholder')) {
+                        this.value = '';
+                    }
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.value = this.getAttribute('placeholder');
+                    }
+                });
+            });
+
+            const messageArea = document.getElementById('contact-message');
+            const charCount = document.getElementById('char-count');
+            const maxLength = messageArea.getAttribute('maxlength');
+
+            function updateCharCount() {
+                const remaining = maxLength - messageArea.value.length;
+                charCount.textContent = `${remaining} characters remaining`;
+            }
+
+            messageArea.addEventListener('input', updateCharCount);
+            updateCharCount(); // Initial call to set the correct count on page load
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations - My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <div class="glass-container">
+        <main class="content-width">
+            <section class="book-recommendations">
+                <h2>Book Recommendations 📚</h2>
+                <p class="book-intro">Below are some of my favorite books which I recommend most often to people. They are not currently in any particular order, but as I add more over time I will probably find a way to organize them more systematically. I will also add a short description of the book and my recommendation reason for each book. If you are interested in purchasing any of these books, I'll include an Amazon affiliate link. Using this link is free to you but helps support me, so I really appreciate it 😊 Stay tuned for updates!</p>
+                <ul class="book-list">
+                    <li>
+                        <strong>The Almanack of Naval Ravikant: A Guide to Wealth and Happiness by Eric Jorgenson</strong>
+                        <p>This is one of the most valuable, personally impactful books I have ever had the pleasure of reading. In fact, I go back to it about every 2 years. For anyone not familiar with Naval, he is a serial entrepreneur and venture capitalist who is known for being an extremely avid reader and one of the deepest philosophical thinkers of our time. I really recommend following him on X: <a href="https://twitter.com/naval" target="_blank" rel="noopener noreferrer">@naval</a>.
+                        <i>Buy this book on Amazon (this is an affiliate link) <a href="https://amzn.to/3Xvxb10" target="_blank" rel="noopener noreferrer">here</a>.</i></p>
+                    </li>
+                    <li><strong>Book 2</strong></li>
+                    <li><strong>Book 3</strong></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aleksey Gitelson</p>
+    </footer>
+
+    <script>
+        fetch('header-content.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
