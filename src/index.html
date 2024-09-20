@@ -68,6 +68,34 @@
 
             messageArea.addEventListener('input', updateCharCount);
             updateCharCount(); // Initial call to set the correct count on page load
+
+            document.getElementById('send-message').addEventListener('click', function() {
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const message = document.getElementById('contact-message').value;
+
+                // Basic validation
+                if (name && email && message) {
+                    fetch('http://localhost:3000/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ name, email, message }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert('Message sent successfully!');
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error sending your message.');
+                    });
+                } else {
+                    alert('Please fill in all fields.');
+                }
+            });
         });
     </script>
 </body>
