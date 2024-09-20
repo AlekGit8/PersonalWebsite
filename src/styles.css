@@ -15,7 +15,6 @@
 body {
   font-family: 'Roboto', Arial, sans-serif;
   background-color: var(--background-color);
-  background-image: url('https://source.unsplash.com/random/1920x1080/?forest,nature');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
