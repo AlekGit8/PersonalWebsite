@@ -1,17 +1,20 @@
-/* Global Styles */
+/* Global Variables */
 :root {
   --background-color: rgba(220, 240, 220, 0.8); /* Light forest green with transparency */
   --glass-background: rgba(255, 255, 255, 0.1); /* Transparent white for glass effect */
   --text-color: #1a3a1a; /* Dark forest green for text */
   --accent-color: #4a7a4a; /* Darker green for accents */
+  --accent-color-light: #b9e2b9; /* An even lighter green */
 }
 
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styles */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   background-color: var(--background-color);
@@ -26,6 +29,7 @@ body {
   padding: 0;
 }
 
+/* Main container with glass effect */
 .glass-container {
   background: var(--glass-background);
   backdrop-filter: blur(10px);
@@ -38,6 +42,7 @@ body {
   max-width: 1200px;
 }
 
+/* Header styles */
 header {
   text-align: right;
   padding: 20px;
@@ -54,6 +59,7 @@ header h1 {
   color: var(--text-color);
 }
 
+/* Navigation styles */
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -79,6 +85,7 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
+/* Main content area */
 main {
   padding: 2rem;
 }
@@ -87,6 +94,7 @@ section {
   margin-bottom: 2rem;
 }
 
+/* Heading styles */
 h2 {
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -97,6 +105,7 @@ h2 + * {
   text-align: left; /* Align the content immediately following h2 to the left */
 }
 
+/* Button styles */
 button {
   background-color: var(--accent-color);
   color: white;
@@ -113,6 +122,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* Footer styles */
 footer {
   background-color: var(--glass-background);
   color: var(--text-color);
@@ -125,7 +135,7 @@ footer {
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
   .glass-container {
     margin: 10px;
@@ -149,7 +159,7 @@ footer {
   }
 }
 
-/* New styles for paragraphs */
+/* Paragraph styles */
 p {
   text-align: left;
   width: 75%;
@@ -158,22 +168,24 @@ p {
   margin-bottom: 1rem; /* Add some space between paragraphs */
 }
 
+/* Book introduction styles */
 .book-intro {
     text-align: left;
-    width: 100%; /* Change from 75% to 100% */
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.5;
     white-space: pre-line;
 }
 
+/* Book list styles */
 .book-list {
-    width: 100%; /* Change from 75% to 100% */
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px; /* Adjust this value as needed */
+    padding-left: 20px;
     list-style-position: outside;
-    text-align: left; /* Ensure the list itself is left-aligned */
+    text-align: left;
 }
 
 .book-list > li {
@@ -183,22 +195,24 @@ p {
 .book-list > li > strong {
     font-weight: bold;
     text-decoration: underline;
-    display: inline-block; /* This helps with spacing */
-    margin-bottom: 5px; /* Space between title and description */
+    display: inline-block;
+    margin-bottom: 5px;
 }
 
 .book-list p {
-    margin: 0; /* Remove default paragraph margins */
-    padding-left: 0; /* Remove any left padding */
+    margin: 0;
+    padding-left: 0;
 }
 
+/* Book content styles */
 .book-content {
-    width: 100%; /* Change from 75% to 100% */
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
+/* Book list link styles */
 .book-list p a {
     color: #1DA1F2; /* Twitter blue color */
     text-decoration: none;
@@ -208,6 +222,7 @@ p {
     text-decoration: underline;
 }
 
+/* Social links styles */
 .social-links {
     position: absolute;
     top: 20px;
@@ -251,6 +266,7 @@ p {
     font-size: 16px;
 }
 
+/* Screen reader only class for accessibility */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -285,29 +301,33 @@ p {
     }
 }
 
+/* Left-aligned list style */
 .left-aligned-list {
     text-align: left;
 }
 
+/* Main section heading styles */
 main section h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Add a new class for general content width */
+/* General content width class */
 .content-width {
     width: 100%;
-    max-width: 1200px; /* Adjust this value as needed */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
 }
 
+/* Left-aligned content */
 .left-aligned {
     text-align: left;
 }
 
+/* Aligned list styles */
 .aligned-list {
     padding-left: 0;
     list-style-position: inside;
@@ -317,6 +337,7 @@ main section h2 {
     margin-bottom: 1em;
 }
 
+/* Book recommendations and projects styles */
 .book-recommendations,
 .projects {
     text-align: left;
@@ -345,13 +366,14 @@ main section h2 {
     margin-bottom: 10px;
 }
 
+/* Projects section styles */
 .projects {
     text-align: left;
 }
 
 .projects-intro {
     margin-bottom: 20px;
-    margin-left: 5px; /* Adjusted from 20px to 5px for finer alignment */
+    margin-left: 5px;
 }
 
 .projects-list {
@@ -362,15 +384,15 @@ main section h2 {
 
 .projects-list li {
     margin-bottom: 20px;
-    padding-left: 10px; /* This adds a little space after the bullet */
+    padding-left: 10px;
 }
 
-/* Ensure text wrapping works properly for long list items */
 .projects-list li p {
     margin: 0;
     padding: 0;
 }
 
+/* Contact form styles */
 .contact-me {
     max-width: 500px;
     margin: 2rem auto;
@@ -436,7 +458,7 @@ main section h2 {
     transform: scale(0.98);
 }
 
-/* Add these new styles */
+/* Hardware and software section styles */
 .hardware, .software {
     text-align: left;
 }
@@ -456,9 +478,58 @@ main section h2 {
     margin-bottom: 20px;
 }
 
+/* Character count style */
 #char-count {
     font-size: 0.8em;
     color: #666;
     text-align: right;
     margin-top: 0px;
+}
+
+/* Underlined heading style */
+h3.underline {
+    text-decoration: underline;
+}
+
+/* Styles for expandable headers */
+.expandable-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    color: var(--accent-color);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.expandable-header:hover,
+.expandable-header:focus {
+    color: black;
+    background-color: #9fcba5;
+}
+
+.expandable-header h3 {
+    margin: 0;
+}
+
+.expandable-header .icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.expandable-header[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
+}
+
+/* Ensure the h3 and icon also turn black on hover */
+.expandable-header:hover h3,
+.expandable-header:focus h3,
+.expandable-header:hover .icon,
+.expandable-header:focus .icon {
+    color: black;
 }
