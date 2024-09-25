@@ -15,7 +15,12 @@
             <section class="book-recommendations">
                 <h2>Book Recommendations 📚</h2>
                 <p class="book-intro">Below are some of my favorite books which I recommend most often to people. They are not currently in any particular order, but as I add more over time I will probably find a way to organize them more systematically. I will also add a short description of the book and my recommendation reason for each book. If you are interested in purchasing any of these books, I'll include an Amazon affiliate link. Using this link is free to you but helps support me, so I really appreciate it 😊 Stay tuned for updates!</p>
-                <ul class="book-list">
+                
+                <button class="expandable-header" aria-expanded="false" aria-controls="non-fiction-list">
+                    <h3>Non-Fiction📜</h3>
+                    <span class="icon" aria-hidden="true">▼</span>
+                </button>
+                <ul id="non-fiction-list" class="book-list" hidden>
                     <li>
                         <strong>The Almanack of Naval Ravikant: A Guide to Wealth and Happiness by Eric Jorgenson</strong>
                         <p>This is one of the most valuable, personally impactful books I have ever had the pleasure of reading. In fact, I go back to it about every 2 years. For anyone not familiar with Naval, he is a serial entrepreneur and venture capitalist who is known for being an extremely avid reader and one of the deepest philosophical thinkers of our time. I really recommend following him on X: <a href="https://twitter.com/naval" target="_blank" rel="noopener noreferrer">@naval</a>.
@@ -23,6 +28,16 @@
                     </li>
                     <li><strong>Book 2</strong></li>
                     <li><strong>Book 3</strong></li>
+                </ul>
+
+                <button class="expandable-header" aria-expanded="false" aria-controls="fiction-list">
+                    <h3>Fiction🧙🏻</h3>
+                    <span class="icon" aria-hidden="true">▼</span>
+                </button>
+                <ul id="fiction-list" class="book-list" hidden>
+                    <li><strong>Fiction Book 1</strong></li>
+                    <li><strong>Fiction Book 2</strong></li>
+                    <li><strong>Fiction Book 3</strong></li>
                 </ul>
             </section>
         </main>
@@ -38,6 +53,19 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
+
+        // Updated code for expandable headers
+        document.querySelectorAll('.expandable-header').forEach(button => {
+            const content = document.getElementById(button.getAttribute('aria-controls'));
+            content.hidden = true; // Ensure content is hidden initially
+
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                button.setAttribute('aria-expanded', !expanded);
+                content.hidden = !expanded;
+                button.querySelector('.icon').textContent = !expanded ? '▲' : '▼';
+            });
+        });
     </script>
 </body>
 </html>
