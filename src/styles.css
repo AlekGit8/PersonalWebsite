@@ -467,3 +467,15 @@ h3.underline {
 .expandable-header:focus .icon {
     color: black;
 }
+
+/* Updated styles for the visitor counter */
+.visitor-counter {
+    display: inline-block; /* Make the background fit the content */
+    text-align: center; /* Center the text */
+    font-size: 1.2rem; /* Increase font size */
+    background-color: rgb(192, 245, 224); /* Light background for contrast */
+    padding: 10px 20px; /* Add padding for a button-like appearance */
+    border-radius: 40px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.93); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space above the counter */
+}
