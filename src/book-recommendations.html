@@ -60,10 +60,10 @@
             content.hidden = true; // Ensure content is hidden initially
 
             button.addEventListener('click', () => {
-                const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+                const expanded = button.getAttribute('aria-expanded') === 'true';
                 button.setAttribute('aria-expanded', !expanded);
-                content.hidden = !expanded;
-                button.querySelector('.icon').textContent = !expanded ? '▲' : '▼';
+                content.hidden = expanded; // Change this line
+                button.querySelector('.icon').textContent = expanded ? '▼' : '▲'; // Change this line
             });
         });
     </script>

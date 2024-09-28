@@ -16,6 +16,9 @@
                 <h2>Welcome! 👋🏻</h2>
                 <p>Hello! I'm Aleksey. This is my personal website.</p>
                 <p>Feel free to explore and learn more about me.</p>
+                <p>To get in touch with me, DM me on X. It's linked at the top right of the page.</p>
+                
+                <div id="visitor-counter" class="visitor-counter"></div> <!-- Moved visitor counter back here -->
             </section>
         </main>
     </div>
@@ -30,6 +33,12 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
+
+        // Visitor counter logic
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitor-counter').innerText = `You are visitor number ${visitorCount} 😁`; // Updated text
     </script>
 </body>
 </html>
